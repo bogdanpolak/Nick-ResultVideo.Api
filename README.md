@@ -16,7 +16,7 @@ create database mydb;
 
 DO $$
 BEGIN
-create user nick with encrypted password 'chapsas';
+create user nick with encrypted password 'chapsas'  superuser;
 EXCEPTION WHEN duplicate_object THEN RAISE NOTICE '%, skipping', SQLERRM USING ERRCODE = SQLSTATE;
 END
 $$;
@@ -41,7 +41,5 @@ content-type: application/json
 You can run it using `curl`, Postman or any HTTP REST client: 
 
 ```shell
-curl -X POST https://localhost:5001/customers
-   -H 'Content-Type: application/json'
-   -d '{"fullname": "Nick Chapsas","email": "nick@nickchapsas.com","gitHubUsername": "Elfocrash","dateOfBirth": "1993-04-20"}'
+curl -X POST https://localhost:5001/customers -H 'Content-Type: application/json' -d '{"fullname": "Nick Chapsas","email": "nick@nickchapsas.com","gitHubUsername": "Elfocrash","dateOfBirth": "1993-04-20"}'
  ```
