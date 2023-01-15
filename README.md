@@ -9,7 +9,7 @@
 
 ## Create the database and the user
 
-```postgresql
+```sql
 create database mydb;
 
 DO $$
