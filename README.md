@@ -9,6 +9,8 @@
 
 ## Create the database and the user
 
+Run script in SQL Shell - psql or in any SQL IDE
+
 ```sql
 create database mydb;
 
@@ -35,3 +37,11 @@ content-type: application/json
     "dateOfBirth": "1993-04-20"
 }
 ```
+
+You can run it using `curl`, Postman or any HTTP REST client: 
+
+```shell
+curl -X POST https://localhost:5001/customers
+   -H 'Content-Type: application/json'
+   -d '{"fullname": "Nick Chapsas","email": "nick@nickchapsas.com","gitHubUsername": "Elfocrash","dateOfBirth": "1993-04-20"}'
+ ```
